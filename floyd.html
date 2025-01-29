@@ -28,26 +28,27 @@
       border-radius: 10px;
     }
 
-    .graph {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 30px;
+    #game-content {
+      margin-top: 30px; /* Added space between buttons and matrix */
     }
 
-    .node {
-      width: 80px;
-      height: 80px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 2px solid #007bff;
-      border-radius: 50%;
-      background: #1d3557;
-      color: #a8dadc;
-      font-weight: bold;
+    .button-container {
+      margin-bottom: 20px; /* Space between buttons and game content */
+    }
+
+    .button {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
     }
 
     table {
@@ -73,25 +74,9 @@
       border-radius: 5px;
     }
 
-    .button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .button:disabled {
-      background-color: #ccc;
-      cursor: not-allowed;
-    }
-
     .result {
       margin-top: 20px;
       font-size: 1.2em;
-      color: #e0e0e0;
     }
 
     .correct {
@@ -106,11 +91,15 @@
 <body>
   <h1>Floyd's Algorithm Game</h1>
   <div class="game-container">
-    <h2>Select Level</h2>
-    <button class="button" id="easy-button">Easy</button>
-    <button class="button" id="hard-button">Hard</button>
+    <div class="button-container">
+      <button class="button" id="instructions-button">Instructions</button>
+      <h2>Select Level</h2>
+      <button class="button" id="easy-button">Easy</button>
+      <button class="button" id="hard-button">Hard</button>
+    </div>
     <div id="game-content"></div>
   </div>
+
   <script>
     const easyMatrix = [
       [0, Infinity, 3],
@@ -200,6 +189,10 @@
 
     document.getElementById("hard-button").addEventListener("click", () => {
       createTable(hardMatrix, 'hard');
+    });
+
+    document.getElementById("instructions-button").addEventListener("click", () => {
+      alert("Instructions:\n1. Select a difficulty level.\n2. A distance matrix will be displayed.\n3. Enter the correct shortest path values in the matrix.\n4. Click 'Check' to see if your answers are correct.");
     });
   </script>
 </body>
