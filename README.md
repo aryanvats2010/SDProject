@@ -3,6 +3,8 @@
 AlgoHub is a web platform designed to help students and developers learn, practice, and implement algorithms efficiently.  
 It provides interactive examples, code snippets, and problem-solving exercises in multiple programming languages.
 
+🔗 **Live Demo:** [Click here to visit](https://algohubb.netlify.app/)
+
 ---
 
 ## ✨ Features
@@ -18,5 +20,4 @@ It provides interactive examples, code snippets, and problem-solving exercises i
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/<your-username>/algohub.git
-   cd algohub
+   git clone https://github.com/aryanvats2010/SDProject.git
